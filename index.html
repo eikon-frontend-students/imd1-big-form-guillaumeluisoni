@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join Our Team</title>
+
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+
+<body>
+
+  <!-- PAGE ROUGE -->
+<!-- TOP BAR -->
+
+<div class="top-bar">
+
+  <div class="top-left">
+    <a href="https://thelinestudio.com/">THE LINE</a>
+  </div>
+
+  <div class="top-center">
+    <span> CLOSED (10—6PM)</span>
+    <span>LONDON, ENGLAND</span>
+  </div>
+
+  <nav class="top-nav">
+    <a href="https://thelinestudio.com/">HOME</a>
+    <a href="https://thelinestudio.com/work/">WORK</a>
+    <a href="https://thelinestudio.com/entertainment/">ENTERTAINMENT</a>
+    <a href="https://thelinestudio.com/about/">ABOUT</a>
+    <a href="https://thelinestudio.com/feed/">FEED</a>
+    <a href="https://thelinestudio.com/podcast/">PODCAST</a>
+    <a href="#" class="active">CONTACT</a>
+    <a href="#">SHOP</a>
+  </nav>
+
+</div>
+
+  <div class="page-container">
+
+    <header class="page-header">
+      <div class="hero">
+        <h1>Join Our Team ↓</h1>
+      </div>
+    </header>
+
+    <section class="career-section">
+
+      <div class="hero">
+        <p>/ FORM</p>
+      </div>
+
+      <form class="career-form">
+
+        <div class="input-group">
+          <label>FIRST NAME</label>
+          <input type="text">
+        </div>
+
+        <div class="input-group">
+          <label>SECOND NAME</label>
+          <input type="text">
+        </div>
+
+        <div class="input-group">
+          <label>EMAIL</label>
+          <input type="email">
+        </div>
+
+        <div class="input-group">
+          <label>N.TEL</label>
+          <input type="tel">
+        </div>
+
+        <div class="input-group">
+          <label>COUNTRY</label>
+
+          <select>
+            <option>Switzerland</option>
+            <option>France</option>
+            <option>Belgium</option>
+            <option>Germany</option>
+            <option>USA</option>
+          </select>
+        </div>
+
+<div class="upload-wrapper">
+
+  <label class="upload-box">
+
+    <span>CV</span>
+
+    <input type="file" accept=".pdf,.doc,.docx">
+
+    <div class="upload-ui">
+      UPLOAD ↑
+    </div>
+
+  </label>
+
+  <label class="upload-box">
+
+    <span>MOTIVATION LETTER</span>
+
+    <input type="file" accept=".pdf,.doc,.docx">
+
+    <div class="upload-ui">
+      UPLOAD ↑
+    </div>
+
+  </label>
+
+</div>
+
+
+
+        <button class="submit-btn">
+          SUBMIT →
+        </button>
+
+      </form>
+
+    </section>
+
+  </div>
+
+
+  <!-- FOOTER BLANC -->
+
+  <footer class="big-footer">
+
+    <div class="footer-logo">
+      THE LINE
+    </div>
+
+  </footer>
+
+<script>
+
+const page = document.querySelector('.page-container');
+
+window.addEventListener('scroll', () => {
+
+  const scrollY = window.scrollY;
+
+  const maxScroll =
+    document.body.scrollHeight - window.innerHeight;
+
+  /* progression du scroll */
+  const progress = scrollY / maxScroll;
+
+
+  /* mouvement principal horizontal */
+  let moveX = scrollY * 0.08;
+
+  /* petit mouvement diagonal UNIQUEMENT à la fin */
+  let moveY = 0;
+
+  if(progress > 0.72){
+
+    const extraProgress = (progress - 0.72) / 0.28;
+
+    moveY = extraProgress * 10;
+
+    moveX += extraProgress * 10;
+  }
+
+  page.style.transform =
+    `translate(${-moveX}px, ${moveY}px)`;
+
+
+  /* apparition footer */
+
+  if(scrollY > 300){
+
+    document.body.classList.add('scrolled');
+
+  } else {
+
+    document.body.classList.remove('scrolled');
+
+  }
+
+});
+
+</script>
+
+
+</body>
+</html>
